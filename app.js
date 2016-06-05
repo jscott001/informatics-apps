@@ -25,24 +25,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('trust proxy', true);
 
-// Configure the session and session storage.
-// MemoryStore isn't viable in a multi-server configuration, so we
-// use encrypted cookies. Redis or Memcache is a great option for
-// more secure sessions, if desired.
-// [START session]
-//app.use(session({
-//  secret: config.secret,
-//  signed: true
-// }));
-// [END session]
-
-// OAuth2
-//var oauth2 = require('./lib/oauth2')(config.oauth2);
-//app.use(oauth2.router);
-
-// Setup modules and dependencies
-// var images = require('./lib/images')(config.gcloud, config.cloudStorageBucket);
-// var model = require('./books/model')(config);
 
 // Books
 app.use('/books', require('./books/crud'));
