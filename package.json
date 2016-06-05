@@ -40,14 +40,18 @@
     ]
   },
   "dependencies": {
+     "async": "^1.5.2",
     "body-parser": "^1.15.0",
+    "cookie-session": "^2.0.0-alpha.1",
     "express": "^4.13.4",
     "gcloud": "~0.31.0",
+    "googleapis": "^2.1.7",
     "jade": "^1.11.0",
     "kerberos": "^0.0.19",
     "lodash": "^4.11.1",
     "mongodb": "^2.1.16",
     "mysql": "^2.10.2",
+    "multer": "^1.1.0",
     "nconf": "^0.8.4",
     "prompt": "^1.0.0"
   },

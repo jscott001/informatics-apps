@@ -3,5 +3,9 @@
   "DATA_BACKEND": "cloudsql",
   "MYSQL_USER": "informaticuser",
   "MYSQL_PASSWORD": "Informatics@1!",
-  "MYSQL_HOST": "207.223.166.28"
+  "MYSQL_HOST": "207.223.166.28",
+  "CLOUD_BUCKET": "informaticapps-1305",
+  "OAUTH2_CLIENT_ID": "815039044666-jeuhmbc8sqi9p87aoiuhqjc9mfl9u1ss.apps.googleusercontent.com",
+  "OAUTH2_CLIENT_SECRET": "4JDmDcuLoVbGdnwWSj3Fkp-l",
+  "OAUTH2_CALLBACK": "https://informaticapps-1305.appspot.com/auth/google/callback"
 }

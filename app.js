@@ -15,6 +15,7 @@
 
 var path = require('path');
 var express = require('express');
+var session = require('cookie-session');
 var config = require('./config');
 
 var app = express();
@@ -23,6 +24,25 @@ app.disable('etag');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('trust proxy', true);
+
+// Configure the session and session storage.
+// MemoryStore isn't viable in a multi-server configuration, so we
+// use encrypted cookies. Redis or Memcache is a great option for
+// more secure sessions, if desired.
+// [START session]
+//app.use(session({
+//  secret: config.secret,
+//  signed: true
+// }));
+// [END session]
+
+// OAuth2
+//var oauth2 = require('./lib/oauth2')(config.oauth2);
+//app.use(oauth2.router);
+
+// Setup modules and dependencies
+// var images = require('./lib/images')(config.gcloud, config.cloudStorageBucket);
+// var model = require('./books/model')(config);
 
 // Books
 app.use('/books', require('./books/crud'));
@@ -47,6 +67,7 @@ app.use(function (err, req, res, next) {
   res.status(500).send(err.response || 'Something broke!');
 });
 
+
 if (module === require.main) {
   // Start the server
   var server = app.listen(config.get('PORT'), function () {
@@ -54,5 +75,7 @@ if (module === require.main) {
     console.log('App listening on port %s', port);
   });
 }
+
+
 
 module.exports = app;
